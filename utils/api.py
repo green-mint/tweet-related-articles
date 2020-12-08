@@ -24,13 +24,9 @@ def get_google_results(query: str, result_count: int = 5) -> List[GoogleResult]:
     result_set: List[GoogleResult] = []
 
     for i in range(result_count):
-        title = ""
-        link = ""
-        try:
-            title = results['items'][i].get('title', '')
-            link = results['items'][i].get('link', '')
-        except KeyError as e:
-            print(e)
+
+        title = results['items'][i].get('title', '')
+        link = results['items'][i].get('link', '')
 
         result_set.append(GoogleResult(title, link))
 
