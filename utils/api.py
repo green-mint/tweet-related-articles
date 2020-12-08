@@ -1,5 +1,9 @@
-from googleapi import google
+from apiclient.discovery import build
 from typing import List
+from dotenv import find_dotenv
+import os
+
+find_dotenv('../.env')
 
 
 class GoogleResult():
@@ -11,16 +15,23 @@ class GoogleResult():
 def get_google_results(query: str, result_count: int = 5) -> List[GoogleResult]:
     """Returns the GoogleResult of the results received from the keyboard"""
 
-    results = google.search(query, result_count)
+    resource = build("customsearch", 'v1',
+                     developerKey=os.environ.get('YOUTUBE_API')).cse()
+
+    results = resource.list(
+        q=query, cx=os.environ.get('YOUTUBE_CSX')).execute()
 
     result_set: List[GoogleResult] = []
 
-    for result in results:
-        full_title = result.name
-
-        title = full_title[:full_title.rfind("www")]
-        link = result.link
+    for i in range(result_count):
+        title = ""
+        link = ""
+        try:
+            title = results['items'][i].get('title', '')
+            link = results['items'][i].get('link', '')
+        except KeyError as e:
+            print(e)
 
         result_set.append(GoogleResult(title, link))
 
-    return result_set[:result_count]
+    return result_set

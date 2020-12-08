@@ -1,7 +1,7 @@
 from typing import Dict, List, Any
 
 from flask import Flask, request
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, output_json
 
 from utils.keywords import extract
 from utils.api import get_google_results
