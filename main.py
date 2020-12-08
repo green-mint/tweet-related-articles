@@ -1,8 +1,8 @@
 from typing import Dict, Text, List
 from flask import Flask
 from flask_restful import Resource, Api
-from keywords.keywords import extract
-from keywords.api import get_google_results
+from utils.keywords import extract
+from utils.api import get_google_results
 
 app = Flask(__name__)
 api = Api(app)
