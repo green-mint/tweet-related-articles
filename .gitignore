@@ -3,3 +3,4 @@ __pycache__
 keywords/__pycache__
 venv
 test.py
+.env
