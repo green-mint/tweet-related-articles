@@ -19,3 +19,5 @@ On clicking the <svg of the button> the the tweets are parsed and sent to the Fl
 * Google Custom Search API
 * SBERT.net
 * NLTK
+
+## Future TODOs
