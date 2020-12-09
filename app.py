@@ -2,11 +2,10 @@ from typing import Dict, List, Any
 import os
 
 from flask import Flask, request
-from flask_restful import Resource, Api, output_json
+from flask_restful import Resource, Api
 
 from utils.keywords import extract
 from utils.api import get_google_results
-from utils.similarity import similarity
 from utils.helper import get_string_from_list
 
 app = Flask(__name__)
@@ -39,7 +38,7 @@ class TextToLinks(Resource):
             })
 
         # Generating a similarilty index from the titles generated
-        similarity_indices = similarity(text, titles)
+        # similarity_indices = similarity(text, titles)
 
         # for i in range(len(results)):
         #     results[i]['similarity'] = similarity_indices[i]
