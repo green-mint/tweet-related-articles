@@ -41,8 +41,8 @@ class TextToLinks(Resource):
         # Generating a similarilty index from the titles generated
         similarity_indices = similarity(text, titles)
 
-        for i in range(len(results)):
-            results[i]['similarity'] = similarity_indices[i]
+        # for i in range(len(results)):
+        #     results[i]['similarity'] = similarity_indices[i]
 
         return results
 
