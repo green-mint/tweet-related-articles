@@ -1,4 +1,5 @@
 from typing import Dict, List, Any
+import os
 
 from flask import Flask, request
 from flask_restful import Resource, Api, output_json
@@ -17,6 +18,8 @@ class TextToLinks(Resource):
     def get(self: Resource):
 
         text = request.args.get('text', "").strip()
+        if not text:
+            return {"Error": "No text was provided"}
 
         # Getting keywords from the text given
         phrases = extract(text)
@@ -49,4 +52,5 @@ api.add_resource(TextToLinks, '/')
 
 
 if __name__ == '__main__':
+    os.system("python3 -m spacy download en_core_web_md")
     app.run()
