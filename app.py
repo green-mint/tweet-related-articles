@@ -49,4 +49,4 @@ api.add_resource(TextToLinks, '/')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
