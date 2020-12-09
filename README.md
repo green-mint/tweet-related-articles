@@ -8,7 +8,7 @@ No matter how hard someone tries, 280 characters can never be enough to convey t
 * Muhammad Subhan Abbas
 * Muhammad Saad ur Rehman
 
-## Getting Started
+## Getting Started 
 
 ## Working
 On clicking the <svg of the button> the the tweets are parsed and sent to the Flask RESTful backend running on Heroku. Here improtant keyphrases are extracted from the tweets and quried on Google which return article links and article heads. The article heads are passed through a similarity function to measure how much similar they are to the tweet and score each article. Finally, the article links, the article heads and the article scores are returned to the front-end to be rendered for the user 
@@ -17,7 +17,7 @@ On clicking the <svg of the button> the the tweets are parsed and sent to the Fl
 * Javascript
 * Flask
 * Google Custom Search API
-* SBERT.net
+* SBERT
 * NLTK
 
 ## Future TODOs
