@@ -1,1 +1,2 @@
-web: python -m spacy download en_core_web_md && gunicorn app:app
+urgentworker: python -m spacy download en_core_web_md
+web: gunicorn app:app
