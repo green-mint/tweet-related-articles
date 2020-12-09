@@ -52,5 +52,4 @@ api.add_resource(TextToLinks, '/')
 
 
 if __name__ == '__main__':
-    os.system("python3 -m spacy download en_core_web_md")
     app.run()
